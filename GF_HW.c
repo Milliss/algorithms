@@ -3,16 +3,16 @@
 
 void main()
 {
-	int input,inputx,inputy,inputlist;
+	int input,inputx,inputy,inputlist;//input為值 inputx,y為x,y軸 
 	int arr[10][10];
-	int delinputx,delinputy;
+	int delinputx,delinputy;//刪除的那個點的x,y軸
 	printf("插入功能請按1,刪除功能請按2\n"); 
 	scanf("%d",&inputlist);
 	if(inputlist=='1')//插入功能
 	{
-		printf("請輸入兩個數字...\n");
-		int count=0;
-		for(int i=0;i<11;i++)
+		printf("請輸入三個數字...\n");
+		int count=0;//計數
+		for(int i=0;i<11;i++)//先把每個格子初始設成0~99
 		{
 			for(int j=0;j<11;j++)
 			{
@@ -20,7 +20,7 @@ void main()
 			count++;
 		    }
 		}	
-	for(int i=0;i<11;i++)
+	for(int i=0;i<11;i++)//把初始格子print出來 就是0~99
 	{
 		for(int j=0;j<11;j++)
 		{
@@ -28,9 +28,9 @@ void main()
 		}
 		printf("\n");
 	}
-	scanf("%d %d %d",&input,&inputx,&inputy);
-	arr[inputx][inputy]=input;
-	for(int i=0;i<11;i++)
+	scanf("%d %d %d",&input,&inputx,&inputy);//讀取數字 依序是 數值,x軸,y軸
+	arr[inputx][inputy]=input;//把輸入的值丟去那個格子
+	for(int i=0;i<11;i++)//把全部print出來一次
 	{
 		for(int j=0;j<11;j++)
 		{
@@ -41,9 +41,10 @@ void main()
     }
     if(inputlist=='2')//刪除功能
     {
-	scanf("%d %d",&delinputx,&delinputy);
-	arr[delinputx][delinputy]=0;
-	for(int i=delinputx;i<11;i++)
+    printf("請輸入二個數字...\n");
+	scanf("%d %d",&delinputx,&delinputy);//讀取要刪除的位置
+	arr[delinputx][delinputy]=0;//刪除位置變成0
+	for(int i=delinputx;i<11;i++)//把後面的全部往前移動一格
 	{
 		for(int j=delinputy;j<11;j++)
 		{
@@ -51,8 +52,8 @@ void main()
 
 		}
 	}
-	arr[10][10]=0;
-	for(int i=0;i<11;i++)
+	arr[10][10]=0;//最後一格設成0
+	for(int i=0;i<11;i++)//print出來
 	{
 		for(int j=0;j<11;j++)
 		{
@@ -61,6 +62,6 @@ void main()
 		printf("\n");
 	}
     }
-	system"pause";
+	system"pause";//暫停動作
 	return 0;
 }
